@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)goods_en.html -->
+<html><head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="../resource/css/style.css" type="text/css">
+    <link rel="stylesheet" href="../resource/css/goods.css" type="text/css">
+    <title>Goods</title>
+  </head>
+
+  <body>
+
+<div id="grid">
+  <div class="menu">
+  <h3 style="color:#333333;">Pock.po</h3>
+  <dl class="list">
+    <a href="about_en.html">About</a>
+    <a href="artwork_en.html">/ Artwork /</a>
+    <a style="color:#ababab;" href="goods_en.html">Goods</a>
+    <a href="sns_en.html">/ SNS </a>
+  </dl>
+</div>
+  <div class="contents">
+    <div class="scrollmenu">
+      <img src="../resource/img/goods/goods1.jpg">
+      <img src="../resource/img/goods/goods2.jpg">
+      <video src="../resource/img/goods/goods1.mp4" controls="">
+        Your browser does not support the video tag.
+              </video>
+      <img src="../resource/img/goods/goods3.jpg">
+      <img src="../resource/img/goods/goods4.jpg">
+      <img src="../resource/img/goods/goods5.jpg">
+      <img src="../resource/img/goods/goods6.jpg">
+      <img src="../resource/img/goods/goods7.jpg">
+      <img src="../resource/img/goods/goods8.jpg">
+    </div>
+    <div class="introduce">
+<p>
+
+  </p><p><strong>title:</strong> 2020 water fall fabric poster</p>
+  <p><strong>size:</strong> height: 28.7in(73cm) width: 15.7in(40cm)</p>
+    <p><strong>price:</strong> $65.0 (not included delivery fee)</p>
+    <p>delivery fee is depended on your location.</p>
+  <p>It is a hologram poster printed on canvases.
+    Stacking metalic fabric on lace fabrinc, It looks like a hologram</p>
+<p>
+  <div id="smart-button-container">
+        <div style="text-align: center;">
+          <div style="margin-bottom: 1.25rem;">
+            <p>From Seoul to</p>
+            <select id="item-options"><option value="Brazil (delivery fee: $56) total" price="91">Brazil (delivery fee: $56) total - 91 USD</option><option value="Canada (delivery fee: $21) total" price="86">Canada (delivery fee: $21) total - 86 USD</option><option value="China (delivery fee: $16) total" price="81">China (delivery fee: $16) total - 81 USD</option><option value="France (delivery fee: $23) total" price="88">France (delivery fee: $23) total - 88 USD</option><option value="Germany (delivery fee: $18) total" price="88">Germany (delivery fee: $18) total - 88 USD</option><option value="JPN (delivery fee: $16) total" price="81">JPN (delivery fee: $16) total - 81 USD</option><option value="Philippines (delivery fee: $15) total" price="80">Philippines (delivery fee: $15) total - 80 USD</option><option value="Thailand (delivery fee: $16) total" price="81">Thailand (delivery fee: $16) total - 81 USD</option><option value="UK (delivery fee: $19) total" price="89">UK (delivery fee: $19) total - 89 USD</option><option value="USA (delivery fee: $22) total" price="87">USA (delivery fee: $22) total - 87 USD</option></select>
+            <select style="visibility: hidden" id="quantitySelect"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+          </div>
+        <div id="paypal-button-container"></div>
+        </div>
+      </div>
+      <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
+      <script>
+        function initPayPalButton() {
+          var shipping = 0;
+          var itemOptions = document.querySelector("#smart-button-container #item-options");
+      var quantity = parseInt(3);
+      var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+      if (!isNaN(quantity)) {
+        quantitySelect.style.visibility = "visible";
+      }
+      var orderDescription = 'From Seoul to';
+      if(orderDescription === '') {
+        orderDescription = 'Item';
+      }
+      paypal.Buttons({
+        style: {
+          shape: 'rect',
+          color: 'silver',
+          layout: 'vertical',
+          label: 'paypal',
+
+        },
+        createOrder: function(data, actions) {
+          var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+          var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+          var tax = (0 === 0) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
+          if(quantitySelect.options.length > 0) {
+            quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+          } else {
+            quantity = 1;
+          }
+
+          tax *= quantity;
+          tax = Math.round(tax * 100) / 100;
+          var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+          priceTotal = Math.round(priceTotal * 100) / 100;
+          var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+
+          return actions.order.create({
+            purchase_units: [{
+              description: orderDescription,
+              amount: {
+                currency_code: 'USD',
+                value: priceTotal,
+                breakdown: {
+                  item_total: {
+                    currency_code: 'USD',
+                    value: itemTotalValue,
+                  },
+                  shipping: {
+                    currency_code: 'USD',
+                    value: shipping,
+                  },
+                  tax_total: {
+                    currency_code: 'USD',
+                    value: tax,
+                  }
+                }
+              },
+              items: [{
+                name: selectedItemDescription,
+                unit_amount: {
+                  currency_code: 'USD',
+                  value: selectedItemPrice,
+                },
+                quantity: quantity
+              }]
+            }]
+          });
+        },
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(details) {
+            alert('Transaction completed by ' + details.payer.name.given_name + '!');
+          });
+        },
+        onError: function(err) {
+          console.log(err);
+        },
+      }).render('#paypal-button-container');
+    }
+    initPayPalButton();
+      </script>
+</p>
+
+
+
+</div>
+  </div>
+  <div class="footer">
+    <p style="text-align:center;">
+      <strong>language:</strong>
+         <a style="color:#ababab;" href="goods_en.html">en</a>/<a href="goods_kr.html">kr</a>
+    <strong>email:</strong>
+    <a href="mailto:%20imgianna@naver.com"> imgianna@naver.com
+    </a></p>
+  </div>
+
+
+
+</div></body></html>

@@ -1,0 +1,36 @@
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+@media screen and (min-width: 767px){
+#contents{
+  padding: 3%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.introduce{
+  padding-left: 25px;
+  width: 500px;
+  line-height: 200%;
+}
+}
+@media screen and (max-width: 767px){
+  #contents{
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+  }
+  img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+  .introduce{
+    padding-bottom:   25px;
+  }
+}

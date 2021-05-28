@@ -1,0 +1,24 @@
+.img{
+    width: 100%;
+    padding-left: auto;
+    padding-right: auto;
+}
+p{
+    text-align : "middle";
+}
+.contents{
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+
+
+@media screen and (max-width: 767px){
+img{
+    width: 50%;
+}
+}

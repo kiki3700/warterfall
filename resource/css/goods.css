@@ -1,0 +1,41 @@
+
+    .contents{
+        display: flex;
+        flex-direction: column;
+      }
+.introduce{
+margin-left: auto;
+margin-right: auto;
+
+}
+img{
+        padding-right:   30px;
+        height:  300px;
+}
+video{
+        padding-right:  30px;
+        height:  300px;
+}
+div.scrollmenu {
+overflow: auto;
+white-space: nowrap;
+}
+
+div.scrollmenu a {
+display: inline-block;
+text-align: center;
+padding: 10px;
+text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+background-color: #777;
+}
+
+
+@media screen and (max-width: 767px){
+    .contents{
+        display: flex;
+        flex-direction: column;
+      }
+}

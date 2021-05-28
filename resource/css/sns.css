@@ -1,0 +1,32 @@
+
+@media screen and (min-width: 767px){
+
+.list{
+border-bottom: 1px solid black;
+}
+
+.contents{
+margin-top: auto;
+margin-bottom: auto;
+display: flex;
+justify-content: space-around;
+}
+
+
+}
+@media screen and (max-width: 767px){
+  .contents{
+    height: 1vh;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    justify-content: space-around;
+  }
+  .introduce{
+    padding-left: 25px;
+  }
+  img{
+    margin: 15px;
+    text-align:center;
+  }
+}
