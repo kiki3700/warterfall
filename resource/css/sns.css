@@ -1,32 +1,27 @@
 
 @media screen and (min-width: 767px){
 
-.list{
-border-bottom: 1px solid black;
-}
 
 .contents{
-margin-top: auto;
-margin-bottom: auto;
+padding-right: 10%;
+padding-left: 10%;
+height: 62vh;
 display: flex;
+align-items: center;
 justify-content: space-around;
+
 }
 
 
 }
 @media screen and (max-width: 767px){
   .contents{
-    height: 1vh;
+
     margin-top: auto;
     margin-bottom: auto;
+    height: 70vh;
     display: flex;
+    align-items: center;
     justify-content: space-around;
-  }
-  .introduce{
-    padding-left: 25px;
-  }
-  img{
-    margin: 15px;
-    text-align:center;
   }
 }
